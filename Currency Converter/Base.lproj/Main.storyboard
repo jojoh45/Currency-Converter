@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$123.56" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0J-M9-iN7">
+                                <rect key="frame" x="142" y="44" width="137" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount To Be Converted" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-EH-DB5">
+                                <rect key="frame" x="50" y="131" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBS-GI-an4">
+                                <rect key="frame" x="169" y="205" width="76" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Convert"/>
+                                <connections>
+                                    <action selector="convertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jQt-Os-cpt"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kas-kr-Sni">
+                                <rect key="frame" x="169.5" y="173" width="75" height="32"/>
+                                <segments>
+                                    <segment title="💵"/>
+                                    <segment title="💴"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Conversion Rate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEw-ad-iha">
+                                <rect key="frame" x="50" y="89" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wLZ-EH-DB5" firstAttribute="top" secondItem="zEw-ad-iha" secondAttribute="bottom" constant="8" symbolic="YES" id="8Jo-Gt-j9o"/>
+                            <constraint firstItem="zEw-ad-iha" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="9w6-0T-QKf"/>
+                            <constraint firstItem="M0J-M9-iN7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KHQ-MD-rQy"/>
+                            <constraint firstItem="wBS-GI-an4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XSb-JC-yyf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wLZ-EH-DB5" secondAttribute="trailing" constant="50" id="bDm-Tr-12x"/>
+                            <constraint firstItem="kas-kr-Sni" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bcj-lR-pby"/>
+                            <constraint firstItem="wLZ-EH-DB5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="cag-Es-kdg"/>
+                            <constraint firstItem="M0J-M9-iN7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e5a-m0-EMI"/>
+                            <constraint firstItem="wLZ-EH-DB5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mNh-3o-NsB"/>
+                            <constraint firstItem="zEw-ad-iha" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mwL-WQ-Vnr"/>
+                            <constraint firstItem="wBS-GI-an4" firstAttribute="top" secondItem="kas-kr-Sni" secondAttribute="bottom" constant="1" id="rkR-By-27T"/>
+                            <constraint firstItem="kas-kr-Sni" firstAttribute="top" secondItem="wLZ-EH-DB5" secondAttribute="bottom" constant="8" symbolic="YES" id="sfK-k0-17s"/>
+                            <constraint firstItem="zEw-ad-iha" firstAttribute="top" secondItem="M0J-M9-iN7" secondAttribute="bottom" constant="8" symbolic="YES" id="tal-mn-3PI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zEw-ad-iha" secondAttribute="trailing" constant="50" id="zc7-6T-vDt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AmountText" destination="wLZ-EH-DB5" id="Lpd-ld-dy8"/>
+                        <outlet property="ConversionRateText" destination="zEw-ad-iha" id="2PH-E7-CaS"/>
+                        <outlet property="convertedLabel" destination="M0J-M9-iN7" id="E81-Cd-FzU"/>
+                        <outlet property="moneyView" destination="kas-kr-Sni" id="fyY-Zs-Qhj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
